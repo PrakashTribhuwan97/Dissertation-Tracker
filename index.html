@@ -172,6 +172,29 @@
             background: #cbd5e0;
         }
         
+        .btn-danger {
+            background: #e53e3e;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #c53030;
+        }
+        
+        .btn-warning {
+            background: #ed8936;
+            color: white;
+        }
+        
+        .btn-warning:hover {
+            background: #dd6b20;
+        }
+        
+        .btn-small {
+            padding: 4px 8px;
+            font-size: 0.75rem;
+        }
+        
         /* KPI Cards */
         .kpi-grid {
             display: grid;
@@ -357,6 +380,7 @@
             padding: 16px;
             border-bottom: 1px solid #e2e8f0;
             transition: background-color 0.3s;
+            position: relative;
         }
         
         .comment:hover {
@@ -387,6 +411,39 @@
         .comment-text {
             color: #4a5568;
             line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        
+        .comment-actions {
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .comment:hover .comment-actions {
+            opacity: 1;
+        }
+        
+        .comment-edit-form {
+            display: none;
+            margin-top: 8px;
+        }
+        
+        .comment-edit-form.active {
+            display: block;
+        }
+        
+        .comment-edit-form textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.875rem;
+            resize: vertical;
+            margin-bottom: 8px;
         }
         
         .no-comments {
@@ -514,6 +571,10 @@
         
         .notification.error {
             background: #e53e3e;
+        }
+        
+        .notification.info {
+            background: #3182ce;
         }
         
         /* Responsive Design */
@@ -741,20 +802,7 @@
                                 <button class="btn btn-primary" onclick="addComment()">Add Comment</button>
                             </div>
                             <div class="comments-list" id="commentsList">
-                                <div class="comment">
-                                    <div class="comment-header">
-                                        <span class="comment-author">Dr. Sarah Johnson</span>
-                                        <span class="comment-date">July 15, 2025</span>
-                                    </div>
-                                    <div class="comment-text">Good progress on the literature review. Consider adding more recent studies from 2024-2025 to strengthen your theoretical framework.</div>
-                                </div>
-                                <div class="comment">
-                                    <div class="comment-header">
-                                        <span class="comment-author">Prof. Michael Chen</span>
-                                        <span class="comment-date">July 10, 2025</span>
-                                    </div>
-                                    <div class="comment-text">The data analysis approach looks solid. Make sure to validate your findings with cross-validation techniques.</div>
-                                </div>
+                                <!-- Comments will be loaded here -->
                             </div>
                         </div>
                     </div>
@@ -770,18 +818,4 @@
                     </div>
                     <div class="card-content">
                         <h4>Current Research Status</h4>
-                        <ul style="margin: 16px 0; padding-left: 20px;">
-                            <li>✅ Literature Review Phase - 75% Complete</li>
-                            <li>✅ Data Collection from NY Hospital Database</li>
-                            <li>🔄 Statistical Analysis in Progress</li>
-                            <li>⏳ Hypothesis Testing - Pending</li>
-                        </ul>
-                        <button class="btn btn-primary" onclick="showNotification('Research section updated!')">Update Research Status</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Writing Page -->
-            <div class="page-content" id="writing-page">
-                <div class="content-card">
-                    <div class="card-header">
+                        <ul style="
